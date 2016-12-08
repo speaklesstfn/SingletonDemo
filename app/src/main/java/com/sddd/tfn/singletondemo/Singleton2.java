@@ -8,6 +8,7 @@ package com.sddd.tfn.singletondemo;
 public class Singleton2 {
     //由于获取单例对象方法为static，因此singletion2变量也需定义成静态
     private static Singleton2 singleton2 = null;
+    private String name = "";
 
     /**
      * 为了防止外部类通过构造方法获取对象，需要将构造方法定义成private
@@ -26,5 +27,28 @@ public class Singleton2 {
             singleton2 = new Singleton2();
         }
         return singleton2;
+    }
+
+    /**
+     * 设置名称
+     *
+     * @param name 要设置的名称
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * 获取名称
+     *
+     * @return 所设置的名称
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return "name is " + this.name + "  address is " + super.toString();
     }
 }
